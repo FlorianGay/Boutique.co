@@ -1,0 +1,40 @@
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+
+    .logo_title {
+        display: flex;
+        gap: 25px;
+        
+        img {
+            width: 100%;
+            max-width: 75px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+
+    nav {
+        display: flex;
+        gap: 150px;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+
+            li {
+                font-size: 20px;
+            }
+        }
+    }
+}
