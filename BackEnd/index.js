@@ -6,6 +6,7 @@ import userRouter from './routes/userRoutes.js'
 import cartRouter from './routes/cartRoutes.js'
 import productRouter from './routes/productRoutes.js'
 import commentRouter from './routes/commentRoutes.js'
+import initializeAdmin from './initializeAdmin.js'
 
 const app = express()
 
@@ -14,6 +15,13 @@ app.use(express.urlencoded({extended: false}))
 app.use(cors())
 
 mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log('Connect to MongoDB')
+        initializeAdmin()
+    })
+    .catch(err => {
+        console.error('Failed to connect to MongoDB', err);
+    });
 
 app.get('/', (req, res) => res.send('Welcome to Boutique.co API'))
 
