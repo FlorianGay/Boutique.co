@@ -1,6 +1,5 @@
 import Product from "../models/productModels.js"
 
-
 export const getAllProduct = async (req, res) => {
     try {
         const products = await Product.find()
@@ -8,7 +7,7 @@ export const getAllProduct = async (req, res) => {
             return res.status(400).json({error: 'Products not found'})
         }
         return res.json(products)
-    }catch (err) {
+    } catch (err) {
         console.error(`Internal server error`, err)
         return res.status(500).json({error: `Internal server error`})
     } 
