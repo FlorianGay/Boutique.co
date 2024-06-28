@@ -31,6 +31,12 @@ export const addComment = async (req, res) => {
             productId, userId, comment, rating, date, userName: user.firstName
         })
         await newComment.save()
+
+        const comments = await Comment.find({productId})
+        const averageRating = comments.reduce((acc, comment) => acc + comment.rating, 0) / comments.length
+        product.rating = averageRating
+        await product.save()
+
         return res.status(201).json({message: 'Comment added successfully'})
 
 

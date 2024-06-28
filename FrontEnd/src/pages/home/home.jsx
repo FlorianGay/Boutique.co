@@ -1,3 +1,4 @@
+import ProductSmall from "../../components/product/productSmall"
 import SliderIndicators from "../../components/slider/sliderIndicators"
 
 function Home() {
@@ -24,6 +25,12 @@ function Home() {
     return (
         <main>
             <SliderIndicators list={sliderImage}/>
+            <section className="best_rating_article">
+                <h3>Découvrez nos articles les plus appréciés</h3>
+                <div className="product_gallery">
+                    <ProductSmall />
+                </div>
+            </section>
         </main>
     )
 }
