@@ -11,11 +11,11 @@ function RatingStars(props) {
         for (let i = 0; i < 5; i++) {
             if ( i < rating) {
                 stars.push(
-                    <FontAwesomeIcon icon={faStar} style={{color : 'orange'}}/>
+                    <FontAwesomeIcon icon={faStar} style={{color : 'orange'}} key={i}/>
                 )
             } else {
                 stars.push(
-                    <FontAwesomeIcon icon={faStar} style={{color : 'white'}}/>
+                    <FontAwesomeIcon icon={faStar} style={{color : 'white'}} key={i}/>
                 )
             }
         }

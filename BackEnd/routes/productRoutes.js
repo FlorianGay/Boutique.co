@@ -10,4 +10,6 @@ productRouter.get('/product/id/:productId', getProductById)
 
 productRouter.post('/addProduct', addProduct)
 
+productRouter.get('/products/category/:categoryId', getProductById)
+
 export default productRouter
