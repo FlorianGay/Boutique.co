@@ -2,7 +2,7 @@ import Category from "../models/categoriesModels.js"
 
 
 export const addCategory = async (req, res) => {
-     const {name} = req.body
+     const {name, image} = req.body
 
      try {
         const categoryVerification = await Category.findOne({name})
@@ -10,7 +10,7 @@ export const addCategory = async (req, res) => {
             return res.status(400).json({error: 'Category already existed'})
         }
 
-        const newCategory = new Category({name})
+        const newCategory = new Category({name, image})
         await newCategory.save()
         return res.status(201).json({message: 'Category added successfully'})
      }catch (err) {
