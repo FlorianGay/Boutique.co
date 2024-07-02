@@ -3,7 +3,7 @@ import Product from "../models/productModels.js"
 
 export const getAllProduct = async (req, res) => {
     try {
-        const products = await Product.find()
+        const products = await Product.find().populate('category', 'name')
         if (products.length < 1 ) {
             return res.status(400).json({error: 'Products not found'})
         }
@@ -30,14 +30,14 @@ export const getProductById = async (req, res) => {
 }
 
 export const addProduct = async (req, res) => {
-    const {name, description, price, categoryId, images} = req.body
+    const {name, description, price, categoryId, image} = req.body
     try {
         const category = await Category.findById(categoryId)
         if (!category) {
             return res.status(404).json({error: 'Category not found'})
         }
     const newProduct = new Product({
-            name, description, price, category : categoryId, image : images
+            name, description, price, category : categoryId, image
         })
         await newProduct.save()
         return res.status(201).json({message: 'Product added successfully'})
@@ -49,8 +49,12 @@ export const addProduct = async (req, res) => {
 
 export const getProductsByCategory = async (req, res) => {
     const {categoryId} = req.params
+    
     try {
-        const products = await Product.find({category: categoryId}).populate('category')
+        const products = await Product.find({category: categoryId}).populate('category', 'name')
+        if (products.length === 0) {
+            return res.status(404).json({ error: 'No products found for this category' });
+        }
         return res.status(200).json(products)
     } catch (err) {
         console.error(`Internal server error`, err)

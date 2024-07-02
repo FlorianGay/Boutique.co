@@ -14,7 +14,7 @@ function ProductSmall({image, name, category, rating, price}) {
             </div>
                 <figcaption>
                     <h5>{name}</h5>
-                    <p>{category}</p>
+                    <p>{category.name}</p>
                     <p>{price} €</p>
                     <p> <RatingStars rating={rating} /> </p>
                 </figcaption>

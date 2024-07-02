@@ -26,6 +26,7 @@ function Home() {
     ]
 
     const {productList} = useContext(ProductContext) 
+    console.log(productList)
 
     return (
         <main>

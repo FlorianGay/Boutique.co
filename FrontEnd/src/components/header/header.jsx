@@ -3,6 +3,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from '../../assets/boutiqueCo_logo.png'
 import './header.scss'
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -17,7 +18,7 @@ function Header() {
           <ul>
             <li>Accueil</li>
             <li>A propos</li>
-            <li>Catégories</li>
+            <li><Link to={'/category'}>Catégories</Link></li>
             <li>Contact</li>
           </ul>
         </div>
