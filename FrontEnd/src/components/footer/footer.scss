@@ -1,0 +1,38 @@
+
+footer {
+    width: 100%;
+
+    .footer_up {
+        background-color: rgba($color: lightgrey, $alpha: 0.3);
+
+        .footer_up_container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            width: 80%;
+            margin: 0 auto;
+
+            h3 {
+                font-size: 26px;
+            }
+
+            nav {
+                display: flex;
+                gap: 25px;
+
+                a {
+                    padding: 1px;
+
+                    svg {
+                        height: 23px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer_mid_container {
+        
+    }
+}

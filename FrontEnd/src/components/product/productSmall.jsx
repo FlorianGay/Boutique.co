@@ -1,17 +1,22 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom"
+import './productSmall.scss'
+import RatingStars from "../ratingStars/ratingStars"
 
 
-function ProductSmall() {
+function ProductSmall({image, name, category, rating, price}) {
     return (
-        <figure>
+        <figure className="product_small">
             <Link>
-                <img src="" alt="" />
+            <div className="product_img">
+                <img src={image} alt={name} />
+            </div>
                 <figcaption>
-                    <h3>Nom de l'article</h3>
-                    <p>Categorie de l'article</p>
-                    <p>Note de l'article</p>
-                    <p>Prix de l'article</p>
+                    <h5>{name}</h5>
+                    <p>{category}</p>
+                    <p>{price} €</p>
+                    <p> <RatingStars rating={rating} /> </p>
                 </figcaption>
             </Link>
         </figure>

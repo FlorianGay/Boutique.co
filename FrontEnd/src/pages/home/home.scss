@@ -1,0 +1,16 @@
+.best_rating_article {
+  margin: 0 auto;
+  width: 80%;
+
+  h3 {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .product_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}

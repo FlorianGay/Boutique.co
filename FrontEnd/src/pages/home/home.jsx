@@ -1,5 +1,8 @@
+import { useContext } from "react"
 import ProductSmall from "../../components/product/productSmall"
 import SliderIndicators from "../../components/slider/sliderIndicators"
+import { ProductContext } from "../../context/productContext"
+import './home.scss'
 
 function Home() {
 
@@ -22,13 +25,15 @@ function Home() {
         }
     ]
 
+    const {productList} = useContext(ProductContext) 
+
     return (
         <main>
             <SliderIndicators list={sliderImage}/>
             <section className="best_rating_article">
                 <h3>Découvrez nos articles les plus appréciés</h3>
                 <div className="product_gallery">
-                    <ProductSmall />
+                    {productList.map((product, index) => ( <ProductSmall {...product} key={index} />))}
                 </div>
             </section>
         </main>
