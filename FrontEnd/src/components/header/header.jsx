@@ -16,7 +16,7 @@ function Header() {
       <nav>
         <div className="nav_list">
           <ul>
-            <li>Accueil</li>
+            <li><Link to={'/'}>Accueil</Link></li>
             <li>A propos</li>
             <li><Link to={'/category'}>Catégories</Link></li>
             <li>Contact</li>
